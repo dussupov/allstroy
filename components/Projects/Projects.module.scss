@@ -1,0 +1,48 @@
+.projects{
+  margin-top: 60px;
+
+  .projectsTitle{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .projectsSubtitle{
+    font-size: 1.5rem;
+  }
+
+  .projectItems{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .projectItem{
+      width: 30%;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      img{
+        filter: brightness(.6);
+        cursor: pointer;
+        transition: all .4s ease;
+      }
+
+      &:hover{
+        img{
+          filter: brightness(.4);
+        }
+      }
+
+      .projectItemText{
+        position: absolute;
+        top: 0;
+        padding: 20px;
+
+        .projectItemTitle{
+          font-size: 1.25rem;
+          color: white;
+        }
+      }
+    }
+  }
+}

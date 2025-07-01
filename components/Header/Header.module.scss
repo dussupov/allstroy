@@ -1,0 +1,17 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .headerLogo{
+    width: 75px;
+    height: 75px;
+  }
+
+  .headerNav{
+    ul{
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+    }
+  }
+}

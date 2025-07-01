@@ -1,0 +1,34 @@
+.banner{
+  position: relative;
+  height: auto;
+  .bannerImg{
+    position: relative;
+    filter: brightness(0.6);
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bannerText{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    .bannerTitle{
+      color: white;
+      font-size: 3rem;
+      font-weight: 500;
+    }
+
+    .bannerSubtitle{
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+}
