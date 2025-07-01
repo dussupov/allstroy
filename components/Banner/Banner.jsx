@@ -12,7 +12,7 @@ const Banner = () => {
       <div className="container">
         <div className={styles.bannerText}>
           <div className={styles.bannerTitle}>
-            <h1>ALLSTROY1</h1>
+            <h1>ALLSTROY12</h1>
           </div>
           <div className={styles.bannerSubtitle}>
             <span>Мы строим доверие - не просто стены.</span>
