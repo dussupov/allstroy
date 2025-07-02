@@ -1,0 +1,116 @@
+.title{
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #ffffff;
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  text-align: left;
+  width: 100%;
+
+  li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+
+    .check {
+      color: #4caf50;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.gift {
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background: #8b0000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: inset 4px 4px 8px #c14444, inset -4px -4px 8px #a00000;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #a00000;
+  }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
