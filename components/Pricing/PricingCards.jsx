@@ -42,30 +42,32 @@ const packages = [
 export default function PricingCards() {
   return (
     <div className={'container'}>
-      <div className={styles.title}>
-        <span>Выбирайте пакет - мы сделаем остальное</span>
-      </div>
-      <div className={styles.subtitle}>
-        <span></span>
-      </div>
-      <div className={styles.wrapper}>
-        {packages.map((pack, index) => (
-          <div key={index} className={styles.card}>
-            <img src={pack.image} alt={pack.title} className={styles.image}/>
-            <div className={styles.price}>{pack.price}</div>
-            <h3 className={styles.title}>{pack.title}</h3>
-            <p className={styles.description}>{pack.description}</p>
-            <ul className={styles.features}>
-              {pack.features.map((feat, i) => (
-                <li key={i}>
-                  <span className={styles.check}>✓</span> {feat}
-                </li>
-              ))}
-            </ul>
-            <div className={styles.gift}>🎁 Подарок</div>
-            <button className={styles.button}>Заказать услугу</button>
-          </div>
-        ))}
+      <div className={styles.pricing}>
+        <div className={styles.title}>
+          <span>Выбирайте пакет - мы сделаем остальное</span>
+        </div>
+        <div className={styles.subtitle}>
+          <span></span>
+        </div>
+        <div className={styles.wrapper}>
+          {packages.map((pack, index) => (
+            <div key={index} className={styles.card}>
+              <img src={pack.image} alt={pack.title} className={styles.image}/>
+              <div className={styles.price}>{pack.price}</div>
+              <h3 className={styles.title}>{pack.title}</h3>
+              <p className={styles.description}>{pack.description}</p>
+              <ul className={styles.features}>
+                {pack.features.map((feat, i) => (
+                  <li key={i}>
+                    <span className={styles.check}>✓</span> {feat}
+                  </li>
+                ))}
+              </ul>
+              <div className={styles.gift}>🎁 Подарок</div>
+              <button className={styles.button}>Заказать услугу</button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

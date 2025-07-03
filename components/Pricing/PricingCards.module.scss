@@ -1,14 +1,26 @@
-.title{
-  font-size: 2rem;
-  font-weight: 500;
-}
-
 .wrapper {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 60px 0;
+}
+
+.pricing{
+  position: relative;
+  padding: 60px 0;
+
+  &::before{
+    content: '';
+    background: #fefaf6;
+    position: absolute;
+    top: 0%;
+    width: 300%;
+    height: 100%;
+    left: -50%;
+    z-index: -1;
+  }
+
 }
 
 .card {
@@ -44,9 +56,10 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0.5rem 0;
   color: #333;
+  font-weight: 500;
 }
 
 .description {

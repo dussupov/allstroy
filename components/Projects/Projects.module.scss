@@ -1,5 +1,17 @@
 .projects{
   margin-top: 60px;
+  position: relative;
+
+  &::before{
+    content: '';
+    background: #fefaf6;
+    position: absolute;
+    top: -10%;
+    width: 300%;
+    height: 120%;
+    left: -50%;
+    z-index: -1;
+  }
 
   .projectsTitle{
     font-size: 2rem;
@@ -7,11 +19,11 @@
   }
 
   .projectsSubtitle{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .projectItems{
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,6 +33,8 @@
       border-radius: 15px;
       overflow: hidden;
       position: relative;
+      box-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #fff;
+
       img{
         filter: brightness(.6);
         cursor: pointer;
