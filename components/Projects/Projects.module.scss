@@ -4,12 +4,12 @@
 
   &::before{
     content: '';
-    background: #fefaf6;
+    background-image: url(/img/details/bg.png) ;
     position: absolute;
-    top: -10%;
-    width: 300%;
-    height: 120%;
-    left: -50%;
+    top: -40%;
+    width: 600px;
+    height: 600px;
+    left: 0;
     z-index: -1;
   }
 
