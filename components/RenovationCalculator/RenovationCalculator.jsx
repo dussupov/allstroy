@@ -42,64 +42,64 @@ export default function RenovationCalculator() {
 
 	return (
 		<div className={'container'}>
-
-			<h2 className={styles.title}>Калькулятор ремонта</h2>
-
-			<div className={styles.calculator}>
-				<div className={styles.left}>
-					<h3>Выберите опции</h3>
-					<div className={styles.options}>
-						{options.map((opt) => (
-							<label key={opt.name} className={styles.checkbox}>
-								<input
-									type="checkbox"
-									checked={selectedOptions.includes(opt.name)}
-									onChange={() => toggleOption(opt.name)}
-								/>
-								<span className={styles.checkmark}/>
-								<span>
+			<div className={styles.renovationCalc}>
+				<h2 className={styles.title}>Калькулятор ремонта</h2>
+				<div className={styles.calculator}>
+					<div className={styles.left}>
+						<h3>Выберите опции</h3>
+						<div className={styles.options}>
+							{options.map((opt) => (
+								<label key={opt.name} className={styles.checkbox}>
+									<input
+										type="checkbox"
+										checked={selectedOptions.includes(opt.name)}
+										onChange={() => toggleOption(opt.name)}
+									/>
+									<span className={styles.checkmark}/>
+									<span>
                 {opt.name} {opt.perM2 ? `( +${opt.value.toLocaleString()} ₸/м² )` : `( +${opt.value.toLocaleString()} ₸ )`}
               </span>
-							</label>
-						))}
-					</div>
-				</div>
-
-				<div className={styles.right}>
-					<label className={styles.label}>
-						Пакет ремонта
-						<select
-							value={selectedPackage}
-							onChange={(e) => setSelectedPackage(e.target.value)}
-							className={styles.select}
-						>
-							{Object.keys(packages).map((pkg) => (
-								<option key={pkg} value={pkg}>{pkg}</option>
+								</label>
 							))}
-						</select>
-					</label>
-
-					<label className={styles.label}>
-						Площадь (м²)
-						<input
-							type="number"
-							value={area}
-							onChange={(e) => setArea(Number(e.target.value))}
-							className={styles.input}
-							placeholder="например 60"
-							min="1"
-						/>
-					</label>
-
-					<div className={styles.total}>
-						<span>Итого:</span>
-						<span className={styles.amount}>{calculateTotal()}</span>
+						</div>
 					</div>
 
-					<button className={styles.button}>Рассчитать</button>
-					<p className={styles.note}>
-						Другие работы можно уточнить при консультации
-					</p>
+					<div className={styles.right}>
+						<label className={styles.label}>
+							Пакет ремонта
+							<select
+								value={selectedPackage}
+								onChange={(e) => setSelectedPackage(e.target.value)}
+								className={styles.select}
+							>
+								{Object.keys(packages).map((pkg) => (
+									<option key={pkg} value={pkg}>{pkg}</option>
+								))}
+							</select>
+						</label>
+
+						<label className={styles.label}>
+							Площадь (м²)
+							<input
+								type="number"
+								value={area}
+								onChange={(e) => setArea(Number(e.target.value))}
+								className={styles.input}
+								placeholder="например 60"
+								min="1"
+							/>
+						</label>
+
+						<div className={styles.total}>
+							<span>Итого:</span>
+							<span className={styles.amount}>{calculateTotal()}</span>
+						</div>
+
+						<button className={styles.button}>Рассчитать</button>
+						<p className={styles.note}>
+							Другие работы можно уточнить при консультации
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

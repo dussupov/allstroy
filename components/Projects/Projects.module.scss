@@ -3,14 +3,30 @@
   position: relative;
 
   &::before{
-    content: '';
-    background-image: url(/img/details/bg.png) ;
+    content: "";
+    z-index: 1;
+    background-image: url(/img/details/rulon-1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 250px;
+    height: 250px;
+    transform: rotateZ(263deg);
     position: absolute;
-    top: -40%;
-    width: 600px;
-    height: 600px;
-    left: 0;
+    bottom: -10%;
+    right: -10%;
+  }
+
+  &::after{
+    content: "";
     z-index: -1;
+    background-image: url(/img/details/lines.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: -10%;
+    left: -15%;
   }
 
   .projectsTitle{

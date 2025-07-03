@@ -1,5 +1,6 @@
 .whyus{
   margin-top: 60px;
+
   .whyusTitle{
     font-size: 2rem;
     font-weight: 500;
@@ -15,9 +16,23 @@
 }
 
 .whySection {
-  background-color: #ffffff;
   padding: 80px 0;
   text-align: center;
+  position: relative;
+
+  &::before{
+    content: "";
+    z-index: -1;
+    background-image: url(/img/details/lines-2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    bottom: 17%;
+    left: -20%;
+    transform: rotateZ(320deg);
+  }
 }
 
 .sectionTitle {

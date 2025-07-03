@@ -2,6 +2,37 @@ $accent: #8b0000;
 $light-gray: #f7f7f7;
 $border-color: #ddd;
 
+.renovationCalc{
+  position: relative;
+
+  &::before{
+    content: "";
+    z-index: -1;
+    background-image: url(/img/details/rulon-2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    bottom: 52%;
+    right: -36%;
+    transform: rotateZ(313deg)
+  }
+
+  &::after{
+    content: "";
+    z-index: -1;
+    background-image: url(/img/details/lines-3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+  }
+}
+
 .calculator {
   display: flex;
   flex-wrap: wrap;

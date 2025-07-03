@@ -4,6 +4,7 @@ import Projects from "@/components/Projects/Projects";
 import WhyUs from "@/components/WhyUs/WhyUs";
 import PricingCards from "@/components/Pricing/PricingCards";
 import RenovationCalculator from "@/components/RenovationCalculator/RenovationCalculator";
+import Cta from "@/components/Cta/Cta";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <WhyUs />
       <PricingCards />
       <RenovationCalculator />
+      <Cta />
     </main>
   );
 }
