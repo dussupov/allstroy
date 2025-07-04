@@ -6,6 +6,7 @@ import logo from '@/public/img/logo.png'
 import Link from "next/link";
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import ContactsAccordion from "@/components/ContactsAccordion/ContactsAccordion";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,6 +19,8 @@ const Header = () => {
         <div className={styles.headerLogo}>
           <Image src={logo} alt="logo" fill style={{objectFit: 'contain'}}/>
         </div>
+
+        <ContactsAccordion />
 
         <nav className={`${styles.headerNav} ${menuOpen ? styles.open : ''}`}>
           <ul>

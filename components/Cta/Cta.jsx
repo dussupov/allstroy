@@ -1,6 +1,9 @@
+'use client';
 import styles from './Cta.module.scss';
+import { IMaskInput } from 'react-imask';
 
 const Cta = () => {
+
   return (
     <div className={'container'}>
       <section className={styles.ctaSection}>
@@ -11,7 +14,11 @@ const Cta = () => {
             <p>Узнайте стоимость ремонта вашей квартиры прямо сейчас</p>
             <form className={styles.form}>
               <input type="text" placeholder="Ваше имя"/>
-              <input type="tel" placeholder="+7 (___) ___-__-__"/>
+              <IMaskInput
+                mask="+7 (000) 000-00-00"
+                placeholder="+7 (___) ___-__-__"
+                className={styles.input}
+              />
               <button type="submit">Отправить</button>
             </form>
           </div>
