@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   background: #fff;
-  z-index: 1000;
+  z-index: 10;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 
   .headerInner {
@@ -34,7 +34,7 @@
         transition: color 0.3s;
 
         &:hover {
-          color: #0070f3;
+          color: #7d0318;
         }
       }
     }

@@ -1,0 +1,81 @@
+.footer {
+  background-color: #530815; // Бордовый фон
+  color: #fefaf6;
+  padding-top: 2rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &Inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .col {
+    flex: 1 1 200px;
+    min-width: 150px;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff; // Акцентный бежевый
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #eee;
+      margin: 0.25rem 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0.25rem 0;
+
+        a {
+          color: #fefaf6;
+          text-decoration: none;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #d8b690;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    color: #ddd;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &Inner {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

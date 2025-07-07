@@ -1,6 +1,10 @@
 import {Geist, Geist_Mono, Montserrat} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+import Providers from "@/components/Providers/Providers";
+import MultiModal from "@/components/MultiModal/MultiModal";
+import Overlay from "@/components/Overlay/Overlay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +33,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.className} antialiased`}
       >
+      <Providers>
         <Header />
+        <MultiModal />
+        <Overlay />
         {children}
+        <Footer />
+      </Providers>
       </body>
     </html>
   );

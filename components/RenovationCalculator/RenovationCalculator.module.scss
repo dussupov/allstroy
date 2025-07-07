@@ -1,4 +1,4 @@
-$accent: #8b0000;
+$accent: #7d0318;
 $light-gray: #f7f7f7;
 $border-color: #ddd;
 
@@ -41,7 +41,6 @@ $border-color: #ddd;
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #fff;
-  font-family: sans-serif;
   margin: 60px 0;
 }
 
@@ -168,17 +167,17 @@ $border-color: #ddd;
 }
 
 .button {
-  background: $accent;
+  background: #7d0318;
   color: #fff;
-  border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 
   &:hover {
-    background: darken($accent, 10%);
+    background: #a00000;
   }
 }
 
