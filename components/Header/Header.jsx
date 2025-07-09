@@ -24,11 +24,11 @@ const Header = () => {
 
         <nav className={`${styles.headerNav} ${menuOpen ? styles.open : ''}`}>
           <ul>
-            <li><Link href="/">Проекты</Link></li>
-            <li><Link href="/">Почему мы?</Link></li>
-            <li><Link href="#services">Цены</Link></li>
-            <li><Link href="#portfolio">Калькулятор</Link></li>
-            <li><Link href="#about">Заявка</Link></li>
+            <li><Link href="#projects">Проекты</Link></li>
+            <li><Link href="#why_us">Почему мы?</Link></li>
+            <li><Link href="#pricing">Цены</Link></li>
+            <li><Link href="#calculator">Калькулятор</Link></li>
+            <li><Link href="#cta">Заявка</Link></li>
           </ul>
         </nav>
 

@@ -38,7 +38,7 @@ const WhyUs = () => {
 
   return(
     <div className={'container'}>
-      <div className={styles.whyus}>
+      <div className={styles.whyus} id={'why_us'}>
         <div className={styles.whyusTitle}>
           <span>Почему клиенты выбирают ALL Stroy?</span>
         </div>

@@ -42,7 +42,7 @@ const packages = [
 export default function PricingCards() {
   return (
     <div className={'container'}>
-      <div className={styles.pricing}>
+      <div className={styles.pricing} id={'pricing'}>
         <div className={styles.title}>
           <span>Выбирайте пакет - мы сделаем остальное</span>
         </div>

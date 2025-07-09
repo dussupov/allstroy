@@ -29,7 +29,7 @@ const Projects = () => {
 
   return (
     <div className="container">
-      <div className={styles.projects}>
+      <div className={styles.projects} id={'projects'}>
         <div className={styles.projectsTitle}>
           <span>Готовые проекты</span>
         </div>

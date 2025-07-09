@@ -6,7 +6,7 @@ const Cta = () => {
 
   return (
     <div className={'container'}>
-      <section className={styles.ctaSection}>
+      <section className={styles.ctaSection} id={'cta'}>
         <div className={styles.content}>
           <div className={styles.text}>
             <span className={styles.badge}>Бесплатно в день обращения</span>

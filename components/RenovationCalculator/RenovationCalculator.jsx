@@ -42,7 +42,7 @@ export default function RenovationCalculator() {
 
 	return (
 		<div className={'container'}>
-			<div className={styles.renovationCalc}>
+			<div className={styles.renovationCalc} id={'calculator'}>
 				<h2 className={styles.title}>Калькулятор ремонта</h2>
 				<div className={styles.calculator}>
 					<div className={styles.left}>
