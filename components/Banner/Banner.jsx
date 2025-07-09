@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import styles from './Banner.module.scss';
 import Image from 'next/image';
+import Link from "next/link";
 
 export default function Banner() {
   return (
@@ -24,7 +25,11 @@ export default function Banner() {
         <h1>
           Мы строим доверие <br /> — не просто стены
         </h1>
-        <button className={styles.ctaButton}>Получить консультацию</button>
+        <button className={styles.ctaButton}>
+          <Link href={'#cta'}>
+            Получить консультацию
+          </Link>
+        </button>
       </motion.div>
     </section>
   );

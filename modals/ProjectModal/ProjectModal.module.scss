@@ -1,0 +1,76 @@
+.modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  text-align: center;
+
+  .modalTitle{
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    .videoSection {
+      width: 100%;
+      height: 450px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      iframe, video {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .photoSection {
+      width: 100%;
+      .swiper {
+        width: 100%;
+        height: 500px;
+      }
+      img {
+        cursor: grab;
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+    }
+
+    .paramsSection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 8px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-weight: 600;
+          color: #a44;
+        }
+      }
+    }
+
+    .descriptionSection {
+      background: #fefaf6;
+      padding: 1rem;
+      border-radius: 8px;
+      line-height: 1.5;
+      color: #333;
+    }
+  }
+
+}

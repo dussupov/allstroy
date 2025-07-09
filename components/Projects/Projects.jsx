@@ -1,27 +1,45 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import {API_URL} from "@/config";
 
 import styles from './Projects.module.scss';
 import projectImg from '@/public/img/project-placeholder.jpg';
 import Image from "next/image";
 import {useDispatch} from "react-redux";
+import {useEffect, useState} from "react";
 
 const Projects = () => {
 
   const dispatch = useDispatch();
+  const [projects, setProjects] = useState(null)
 
-  const projects = [
-    { id: 1, title: 'Проект 1' },
-    { id: 2, title: 'Проект 2' },
-    { id: 3, title: 'Проект 3' },
-    { id: 4, title: 'Проект 4' },
-    { id: 5, title: 'Проект 5' }
-  ];
+  const getData = async () => {
+    try{
+      const response = await fetch(`${API_URL}/api/projects?populate=*`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+
+      const json = await response.json();
+      setProjects(json.data)
+
+      console.log(json.data)
+    }catch (e) {
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, []);
+
 
   const openModal = (projectId) => {
     dispatch({type: "OPEN_MODAL", modalData: { projectId }, modalType: 'projectModal'});
@@ -54,12 +72,23 @@ const Projects = () => {
           }}
           className={styles.projectsSwiper}
         >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id} className={styles.projectItem} onClick={()=>{openModal(project.id)}}>
-              <Image src={projectImg} alt={project.title} />
+          {projects?.map((project) => (
+            <SwiperSlide key={project.id} className={styles.projectItem} onClick={()=>{openModal(project.documentId)}}>
+              <img src={project?.image ? `${API_URL}`+ project.image[0].formats.medium.url : projectImg} alt={project.title} />
               <div className={styles.projectItemText}>
                 <div className={styles.projectItemTitle}>
                   <span>{project.title}</span>
+                </div>
+                <div className={styles.projectItemContent}>
+                  <div className={styles.projectItemPackage}>
+                    <span>{project.packageType}</span>
+                  </div>
+                  <div className={styles.projectItemSquare}>
+                    <span>{project.square} м²</span>
+                  </div>
+                  <div className={styles.projectItemTerm}>
+                    <span>{project.term} месяца</span>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

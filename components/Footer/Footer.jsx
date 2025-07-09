@@ -26,9 +26,11 @@ const Footer = () => {
         <div className={styles.col}>
           <h4>Навигация</h4>
           <ul>
-            <li><Link href="/">Проекты</Link></li>
-            <li><Link href="/">Почему мы?</Link></li>
-            <li><Link href="/">Цены</Link></li>
+            <li><Link href="#projects">Проекты</Link></li>
+            <li><Link href="#why_us">Почему мы?</Link></li>
+            <li><Link href="#pricing">Цены</Link></li>
+            <li><Link href="#calculator">Калькулятор</Link></li>
+            <li><Link href="#cta">Заявка</Link></li>
           </ul>
         </div>
 
