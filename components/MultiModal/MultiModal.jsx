@@ -6,9 +6,10 @@ import ProjectModal from "@/modals/ProjectModal/ProjectModal";
 import closeModalSvg from '@/public/img/closeModal.svg';
 import Image from "next/image";
 import {useEffect} from "react";
+import CalculatorRequestModal from "@/modals/CalculatorRequestModal/CalculatorRequestModal";
 
 const MultiModal = () => {
-  const {modalIsOpen, modalType, modalData} = useSelector(state => state.multiModal.modal);
+  const {modalIsOpen, modalType, modalData, modalSize} = useSelector(state => state.multiModal.modal);
 
   const dispatch = useDispatch();
 
@@ -37,7 +38,6 @@ const MultiModal = () => {
       if (openModal) {
         dispatch({ type: "CLOSE_MODAL"});
       }
-
     }
   };
 
@@ -50,12 +50,13 @@ const MultiModal = () => {
   }, [modalIsOpen]);
 
   return(
-    <div className={`${styles.modal} ${modalIsOpen ? styles.open : ''}`}>
+    <div className={`${styles.modal} ${modalIsOpen ? styles.open : ''} ${modalSize ? styles[modalSize] : ''}`}>
       <div className={styles.modalContent}>
         <div className={styles.modalClose} onClick={()=>{dispatch({type: "CLOSE_MODAL"})}}>
           <Image src={closeModalSvg} alt={'x'} />
         </div>
         {modalType === 'projectModal' && <ProjectModal />}
+        {modalType === 'calculatorRequestModal' && <CalculatorRequestModal />}
       </div>
     </div>
   )

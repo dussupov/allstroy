@@ -3,6 +3,7 @@ const initialState = {
     modalType: null,
     modalIsOpen: null,
     modalData: null,
+    modalSize: null
   }
 }
 
@@ -15,6 +16,7 @@ export const modalReducer = (state = initialState, action) => {
           modalType: action.modalType,
           modalIsOpen: true,
           modalData: action.modalData,
+          modalSize: action.modalSize || 'large'
         }
       }
     case "CLOSE_MODAL" :
@@ -24,7 +26,8 @@ export const modalReducer = (state = initialState, action) => {
           ...state.modal,
           modalIsOpen: false,
           modalData: null,
-          modalType: null
+          modalType: null,
+          modalSize: null
         }
     }
 

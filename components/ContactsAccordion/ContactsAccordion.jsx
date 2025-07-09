@@ -14,7 +14,7 @@ const ContactsAccordion = () => {
 	return (
 		<div className={styles.accordion}>
 			<button className={styles.header} onClick={toggle}>
-				📱 Контакты
+				Контакты
 				<Image src={isOpen ? arrowUp : arrowDown} alt={'arrow'} />
 			</button>
 

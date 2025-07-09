@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import styles from './RenovationCalculator.module.scss';
+import {useDispatch} from "react-redux";
 
 const packages = {
 	'Комфорт': 135000,
@@ -22,6 +23,8 @@ export default function RenovationCalculator() {
 	const [area, setArea] = useState(60);
 	const [selectedOptions, setSelectedOptions] = useState([]);
 
+	const dispatch = useDispatch();
+
 	const toggleOption = (name) => {
 		setSelectedOptions((prev) =>
 			prev.includes(name)
@@ -39,6 +42,10 @@ export default function RenovationCalculator() {
 		});
 		return total.toLocaleString('ru-RU') + ' ₸';
 	};
+
+	const openModal = () => {
+		dispatch({type: "OPEN_MODAL", modalData: { packages: selectedPackage, area: area, options: selectedOptions, total: calculateTotal()  }, modalType: 'calculatorRequestModal', modalSize: 'small'});
+	}
 
 	return (
 		<div className={'container'}>
@@ -95,7 +102,7 @@ export default function RenovationCalculator() {
 							<span className={styles.amount}>{calculateTotal()}</span>
 						</div>
 
-						<button className={styles.button}>Рассчитать</button>
+						<button className={styles.button} onClick={openModal}>Рассчитать</button>
 						<p className={styles.note}>
 							Другие работы можно уточнить при консультации
 						</p>

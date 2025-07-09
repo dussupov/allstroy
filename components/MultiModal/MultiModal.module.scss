@@ -2,17 +2,28 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -300%);
+  transform: translate(-50%, -50%);
   background-color: #fff;
   z-index: 12;
-  width: 90vw;
-  height: 90vh;
   border-radius: 16px;
   padding: 25px;
-  transition: all .4s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility .2s ease;
 
   &.open{
-    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.small{
+    width: unset;
+    height: unset;
+  }
+
+  &.large{
+    width: 90vw;
+    height: 90vh;
   }
 
   .modalContent{
@@ -23,6 +34,7 @@
   .modalClose{
     position: absolute;
     right: 0;
+    z-index: 10;
     cursor: pointer;
     font-size: 24px;
     color: #000;
