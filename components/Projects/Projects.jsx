@@ -9,7 +9,6 @@ import {API_URL} from "@/config";
 
 import styles from './Projects.module.scss';
 import projectImg from '@/public/img/project-placeholder.jpg';
-import Image from "next/image";
 import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
 
@@ -74,7 +73,7 @@ const Projects = () => {
         >
           {projects?.map((project) => (
             <SwiperSlide key={project.id} className={styles.projectItem} onClick={()=>{openModal(project.documentId)}}>
-              <img src={project?.image ? `${API_URL}`+ project.image[0].formats.medium.url : projectImg} alt={project.title} />
+              <img src={project.image !== null ? `${API_URL}`+ project.image[0].formats.medium.url : projectImg.src} alt={project.title} />
               <div className={styles.projectItemText}>
                 <div className={styles.projectItemTitle}>
                   <span>{project.title}</span>
