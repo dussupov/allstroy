@@ -19,9 +19,10 @@ const Projects = () => {
 
   const getData = async () => {
     try{
-      const response = await fetch(`${API_URL}/api/projects?populate=*`, {
+      const response = await fetch(`${API_URL}/api/projects?locale=ru-RU&populate=*`, {
         method: 'GET',
         headers: {
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
           'Content-Type': 'application/json'
         }
       })
@@ -73,7 +74,7 @@ const Projects = () => {
         >
           {projects?.map((project) => (
             <SwiperSlide key={project.id} className={styles.projectItem} onClick={()=>{openModal(project.documentId)}}>
-              <img src={project.image !== null ? `${API_URL}`+ project.image[0].formats.medium.url : projectImg.src} alt={project.title} />
+              <img src={project.images !== null ? `${API_URL}`+ project.images[0].formats.medium.url : projectImg.src} alt={project.title} />
               <div className={styles.projectItemText}>
                 <div className={styles.projectItemTitle}>
                   <span>{project.title}</span>
@@ -86,7 +87,7 @@ const Projects = () => {
                     <span>{project.square} м²</span>
                   </div>
                   <div className={styles.projectItemTerm}>
-                    <span>{project.term} месяца</span>
+                    <span>{project.term}</span>
                   </div>
                 </div>
               </div>

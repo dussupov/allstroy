@@ -22,6 +22,7 @@ const ProjectModal = () => {
       const response = await fetch(`${API_URL}/api/projects/${projectId}?populate=*`, {
         method: 'GET',
         headers: {
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
           'Content-Type': 'application/json'
         }
       })
