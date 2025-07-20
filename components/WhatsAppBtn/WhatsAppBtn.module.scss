@@ -12,10 +12,13 @@
   border-radius: 100%;
   transition: background-color 0.3s ease;
 
+  @media screen and (max-width: 1024px){
+    width: 60px;
+    height: 60px;
+  }
+
   &:hover {
     background-color: #128C7E; /* Darker green on hover */
     cursor: pointer;
   }
-
-
 }

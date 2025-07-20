@@ -6,11 +6,11 @@
   padding: 60px 0;
 }
 
-.pricing{
+.pricing {
   position: relative;
   padding: 60px 0;
 
-  &::before{
+  &::before {
     content: '';
     background: #fefaf6;
     position: absolute;
@@ -20,7 +20,6 @@
     left: -50%;
     z-index: -1;
   }
-
 }
 
 .card {
@@ -29,6 +28,7 @@
   border-radius: 24px;
   padding: 2rem;
   box-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #ffffff;
+  width: 100%;
   max-width: 30%;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
   color: #333;
   background: #d8b690;
   border-radius: 8px;
-  padding: .25rem .75rem;
+  padding: 0.25rem 0.75rem;
   font-size: 1rem;
   display: inline-block;
   position: absolute;
@@ -88,20 +88,38 @@
     .check {
       color: #4caf50;
       margin-right: 0.5rem;
+      font-weight: bold;
     }
   }
 }
 
-.gift {
-  background: #f0f0f0;
+.giftBlock {
+  background: #fff7ea;
+  border: 1px dashed #f0b660;
   border-radius: 12px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  padding: 1rem;
   margin-top: auto;
   margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 221, 178, 0.3);
+  transition: all 0.3s ease;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.giftTitle {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #b76e00;
+  margin-bottom: 0.25rem;
+}
+
+.giftDesc {
+  font-size: 0.95rem;
+  color: #555;
 }
 
 .button {
@@ -119,15 +137,64 @@
   }
 }
 
-/* Адаптив */
+/* -------------------- АДАПТИВ -------------------- */
+
+/* Для планшетов */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 45%;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+}
+
+/* Для телефонов */
 @media (max-width: 768px) {
   .wrapper {
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
   }
 
   .card {
-    max-width: 90%;
+    max-width: 100%;
     padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .giftBlock {
+    padding: 0.75rem;
+  }
+
+  .giftTitle {
+    font-size: 0.95rem;
+  }
+
+  .giftDesc {
+    font-size: 0.85rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+    top: 15px;
+    left: 15px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .features li {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
   }
 }

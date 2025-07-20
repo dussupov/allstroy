@@ -1,12 +1,12 @@
 'use client'
 
-import styles from './CalculatorRequestModal.module.scss';
+import styles from './PricingRequestModal.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
 import toast from "react-hot-toast";
 import {IMaskInput} from "react-imask";
 
-const CalculatorRequestModal = () => {
+const PricingRequestModal = () => {
 
   const dispatch = useDispatch()
 
@@ -24,12 +24,9 @@ const CalculatorRequestModal = () => {
     const body = {
       ...form,
       packages: modalData.packages,
-      area: modalData.area,
-      options: modalData.options,
-      total: modalData.total
     };
 
-    const res = await fetch('/api/calculateRequest', {
+    const res = await fetch('/api/pricingRequest', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -67,4 +64,4 @@ const CalculatorRequestModal = () => {
   );
 };
 
-export default CalculatorRequestModal;
+export default PricingRequestModal;

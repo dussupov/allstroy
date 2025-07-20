@@ -7,6 +7,7 @@ import closeModalSvg from '@/public/img/closeModal.svg';
 import Image from "next/image";
 import {useEffect} from "react";
 import CalculatorRequestModal from "@/modals/CalculatorRequestModal/CalculatorRequestModal";
+import PricingRequestModal from "@/modals/PricingRequestModal/PricingRequestModal";
 
 const MultiModal = () => {
   const {modalIsOpen, modalType, modalData, modalSize} = useSelector(state => state.multiModal.modal);
@@ -57,6 +58,7 @@ const MultiModal = () => {
         </div>
         {modalType === 'projectModal' && <ProjectModal />}
         {modalType === 'calculatorRequestModal' && <CalculatorRequestModal />}
+        {modalType === 'pricingRequestModal' && <PricingRequestModal />}
       </div>
     </div>
   )

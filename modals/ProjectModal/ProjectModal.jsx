@@ -11,7 +11,7 @@ const ProjectModal = () => {
   const projectId = useSelector(state => state.multiModal.modal.modalData.projectId)
 
   const [video, setVideo] = useState(null);
-  const [images, setImages] = useState(['/img/optimal.jpg', '/img/comfort.jpg', '/img/premium.jpg']);
+  const [images, setImages] = useState([]);
   const [square, setSquare] = useState(null);
   const [packageType, setPackageType] = useState(null);
   const [term, setTerm] = useState(null);
@@ -32,7 +32,13 @@ const ProjectModal = () => {
       setTerm(json.data?.term)
       setPackageType(json.data?.packageType)
       setDescription(json.data?.content[0]?.children[0].text)
-      setImages(json.data.image.map(img => img.url.startsWith('upload') ? img.url : `${API_URL}${img.url}`));
+      setImages(
+        json.data.images.map(img =>
+          img.formats?.medium?.url
+            ? `${API_URL}${img.formats.medium.url}`
+            : `${API_URL}${img.url}`
+        )
+      );
       setVideo(json.data.video ? `${API_URL}${json.data.video[0].url}` : null)
     }catch (e) {
       console.log(e)

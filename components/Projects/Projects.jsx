@@ -29,8 +29,6 @@ const Projects = () => {
 
       const json = await response.json();
       setProjects(json.data)
-
-      console.log(json.data)
     }catch (e) {
       console.log(e)
     }
