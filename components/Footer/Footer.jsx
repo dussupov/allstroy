@@ -15,7 +15,12 @@ const Footer = () => {
 
         <div className={styles.col}>
           <h4>Контакты</h4>
-          <p>(оставим пустыми)</p>
+          <div className={styles.contentItem}>
+            Ильяс: <a href={"tel:+77066687663"}>+7 (706) 668-76-63</a>
+          </div>
+          <div className={styles.contentItem}>
+            Аллан: <a href={"tel:+77066552842"}>+7 (706) 655-28-42</a>
+          </div>
         </div>
 
         <div className={styles.col}>

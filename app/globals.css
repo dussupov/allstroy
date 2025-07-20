@@ -2,7 +2,6 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
 }
 
 @theme inline {
@@ -24,6 +23,9 @@ html{
   font-size: 16px;
   touch-action: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  max-width: 100%;
   @media (max-width: 1200px) {
     font-size: 15px; /* уменьшаем для больших экраzнов */
   }
@@ -33,13 +35,13 @@ html{
   }
 
   @media (max-width: 768px) {
-    font-size: 13px; /* уменьшаем для маленьких экранов */
+    font-size: 12px; /* уменьшаем для маленьких экранов */
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #fff;
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
@@ -52,7 +54,8 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .swiper-pagination-bullet-active {
   background-color: darkred !important;
 }
+
+
