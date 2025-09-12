@@ -1,0 +1,210 @@
+{
+  "header": {
+    "logoAlt": "logo",
+    "bgAlt": "ornament",
+    "burgerOpen": "Open menu",
+    "burgerClose": "Close menu",
+    "nav": {
+      "projects": "Projects",
+      "why": "Why us?",
+      "pricing": "Pricing",
+      "calculator": "Calculator",
+      "cta": "Request"
+    }
+  },
+  "banner": {
+    "title_1": "We build trust",
+    "title_2": "not just walls",
+    "btn": "Get a consultation"
+  },
+  "cta": {
+    "badge": "Free on the day you contact us",
+    "title": "Get a free measurement and consultation",
+    "subtitle": "Find out the cost of renovating your apartment right now",
+    "form": {
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "+7 (___) ___-__-__",
+      "submit": "Send"
+    },
+    "imgAlt": "Blueprint roll",
+    "toast": {
+      "fillAll": "Please fill in all fields!",
+      "success": "Sent successfully!"
+    }
+  },
+  "contacts": {
+    "title": "Contacts",
+    "arrowAlt": "arrow",
+    "person": "{{name}}:"
+  },
+  "projects": {
+    "title": "Completed projects",
+    "subtitle": "Photos that speak for themselves",
+    "sqUnit": "m²"
+  },
+  "whyus": {
+    "title": "Why do clients choose ALL Stroy?",
+    "subtitle": "We don’t just renovate — we create comfort, reliability, and trust. Every process is set up so you feel confident at every stage.",
+    "items": [
+      {
+        "title": "High-quality materials",
+        "description": "We work with certified brands and guarantee consistent quality.",
+        "icon": "/img/whyus/materials.png"
+      },
+      {
+        "title": "Fixed pricing and deadlines",
+        "description": "The estimate and timeline are approved before work begins. Everything is documented.",
+        "icon": "/img/whyus/price.png"
+      },
+      {
+        "title": "Official warranty",
+        "description": "We issue a warranty document and fix any issues if needed.",
+        "icon": "/img/whyus/warranty.png"
+      },
+      {
+        "title": "Detailed technical design",
+        "description": "Clear stage planning. Everything is agreed in advance.",
+        "icon": "/img/whyus/project.png"
+      },
+      {
+        "title": "Turnkey procurement & delivery",
+        "description": "We select, purchase, and deliver materials. You relax without hassle.",
+        "icon": "/img/whyus/delivery.png"
+      },
+      {
+        "title": "Post-renovation deep cleaning",
+        "description": "We tidy up before handover. The space is move-in ready.",
+        "icon": "/img/whyus/cleaning.png"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Choose a package — we’ll handle the rest",
+    "subtitle": "Compare package contents and pick what’s right for you.",
+    "button": "Request service",
+    "packages": [
+      {
+        "title": "Comfort",
+        "price": "135,000 ₸/m²",
+        "description": "Reliable materials and European sanitary ware — the optimal balance of price and quality.",
+        "features": [
+          "Porcelain tiles 60×60",
+          "Laminate, class 33, 8 mm",
+          "Sanitary ware by LeMark (Czech Republic)",
+          "Matte stretch ceiling",
+          "Dulux Bindo 7 paint",
+          "Doors 2 m high",
+          "Sockets/switches — IEK Vita"
+        ],
+        "gift": {
+          "title": "🎁 Gift for the “Comfort” package",
+          "description": "Yandex Alice Mini smart speaker"
+        },
+        "image": "/img/optimal.jpg"
+      },
+      {
+        "title": "Optimal",
+        "price": "150,000 ₸/m²",
+        "description": "More style, more quality — everything you need for a modern interior.",
+        "features": [
+          "Porcelain tiles 120×60",
+          "Quartz vinyl or laminate, class 33, 8 mm — your choice",
+          "Sanitary ware by Bravat (Germany)",
+          "Ceiling — drywall or matte stretch with shadow profile",
+          "Dulux Bindo 7 paint, decorative plaster or moldings on the accent wall",
+          "Doors 2.0 m or 2.10 m — your choice",
+          "Sockets/switches — IEK Brite (various colors)"
+        ],
+        "gift": {
+          "title": "🎁 Gift for the “Optimal” package",
+          "description": "Smeg electric kettle"
+        },
+        "image": "/img/comfort.jpg"
+      },
+      {
+        "title": "Premium",
+        "price": "165,000 ₸/m²",
+        "description": "High-grade materials and thoughtful finishing — for those who value quality.",
+        "features": [
+          "Premium-grade porcelain tiles 120×60",
+          "Sanitary ware by Grohe (Germany)",
+          "Ceiling — drywall or floating stretch with perimeter lighting",
+          "Dulux Bindo 7 paint, decorative plaster + moldings on several walls",
+          "Doors from 2.0 to 2.2 m high — your choice",
+          "Laminate, class 33, 8–12 mm (classic or herringbone), or quartz vinyl",
+          "Sockets/switches — Schneider Electric Atlas (color options)"
+        ],
+        "gift": {
+          "title": "🎁 Gift for the “Premium” package",
+          "description": "Tefal multicooker"
+        },
+        "image": "/img/premium.jpg"
+      }
+    ]
+  },
+  "calc": {
+    "title": "Renovation calculator",
+    "leftTitle": "Choose options",
+    "labelPackage": "Renovation package",
+    "labelArea": "Area (m²)",
+    "areaPlaceholder": "e.g. 60",
+    "total": "Total:",
+    "button": "Calculate",
+    "note": "You can clarify other works during the consultation",
+    "units": { "sqm": "m²", "pcs": "pcs", "perSqm": "/m²" },
+    "packages": { "Comfort": "Comfort", "Optimal": "Optimal", "Premium": "Premium" },
+    "options": {
+      "aircon": { "name": "Air conditioner with installation" },
+      "floorheat": { "name": "Underfloor heating" },
+      "newwalls": { "name": "Building new walls" },
+      "reinforce": { "name": "Wall reinforcement" },
+      "showerglass": { "name": "Shower partition" },
+      "demolition": { "name": "Demolition of old finishes" }
+    }
+  },
+  "footer": {
+    "brand": "ALLSTROY",
+    "slogan": "Turnkey apartment and house renovations in Almaty and the region.",
+    "contactsTitle": "Contacts",
+    "officeTitle": "Office",
+    "navTitle": "Navigation",
+    "addressLine1": "2 Kabdolova St.",
+    "addressLine2": "3rd floor",
+    "bottom": "ALLSTROY © All rights reserved"
+  },
+  "calcModal": {
+    "title": "Leave a request",
+    "subtitle": "We’ll contact you for a consultation",
+    "form": {
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "+7 (___) ___-__-__",
+      "submit": "Send"
+    },
+    "toast": {
+      "fillAll": "Please fill in all fields!",
+      "success": "Sent successfully!",
+      "error": "Error while sending the request"
+    }
+  },
+  "pricingModal": {
+    "title": "Leave a request",
+    "subtitle": "We’ll contact you for a consultation",
+    "form": {
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "+7 (___) ___-__-__",
+      "submit": "Send"
+    },
+    "toast": {
+      "fillAll": "Please fill in all fields!",
+      "success": "Sent successfully!",
+      "error": "Error while sending the request"
+    }
+  },
+  "projectModal": {
+    "titleFallback": "Project",
+    "area": "Area",
+    "package": "Package",
+    "term": "Completion time",
+    "photoAlt": "Photo {{index}}"
+  }
+}

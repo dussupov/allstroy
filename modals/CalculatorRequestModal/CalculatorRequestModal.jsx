@@ -1,23 +1,24 @@
 'use client'
 
 import styles from './CalculatorRequestModal.module.scss';
-import {useDispatch, useSelector} from "react-redux";
-import {useState} from "react";
-import toast from "react-hot-toast";
-import {IMaskInput} from "react-imask";
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { IMaskInput } from 'react-imask';
+import { useTranslation } from 'react-i18next';
 
 const CalculatorRequestModal = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  const {modalData} = useSelector(state => state.multiModal.modal);
-  const [form, setForm] = useState({ name: '', phone: ''});
+  const { modalData } = useSelector((state) => state.multiModal.modal);
+  const [form, setForm] = useState({ name: '', phone: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.name.trim() || !form.phone.trim()) {
-      toast.error('Заполните все поля!');
+      toast.error(t('calcModal.toast.fillAll'));
       return;
     }
 
@@ -26,7 +27,7 @@ const CalculatorRequestModal = () => {
       packages: modalData.packages,
       area: modalData.area,
       options: modalData.options,
-      total: modalData.total
+      total: modalData.total,
     };
 
     const res = await fetch('/api/calculateRequest', {
@@ -36,33 +37,38 @@ const CalculatorRequestModal = () => {
     });
 
     if (res.ok) {
-      toast.success('Успешно отправлено!');
-      dispatch({type: "CLOSE_MODAL"})
+      toast.success(t('calcModal.toast.success'));
+      dispatch({ type: 'CLOSE_MODAL' });
       setForm({ name: '', phone: '' });
     } else {
-      toast.error('Ошибка при отправке запроса');
+      toast.error(t('calcModal.toast.error'));
     }
   };
 
   return (
     <div className={styles.modal}>
-      <h2 className={styles.title}>Оставьте заявку</h2>
-      <p className={styles.subtitle}>Мы свяжемся с вами для консультации</p>
+      <h2 className={styles.title}>{t('calcModal.title')}</h2>
+      <p className={styles.subtitle}>{t('calcModal.subtitle')}</p>
 
-      <div className={styles.form}>
-        <input type="text" placeholder="Ваше имя"
-               onChange={(e) => setForm({...form, name: e.target.value})}
-               value={form.name} className={styles.input}
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder={t('calcModal.form.namePlaceholder')}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          value={form.name}
+          className={styles.input}
         />
         <IMaskInput
           mask="+7 (000) 000-00-00"
-          placeholder="+7 (___) ___-__-__"
+          placeholder={t('calcModal.form.phonePlaceholder')}
           className={styles.input}
           value={form.phone}
-          onChange={(e) => setForm({...form, phone: e.target.value})}
+          onAccept={(val) => setForm({ ...form, phone: val })}
         />
-        <button type="submit" onClick={handleSubmit}>Отправить</button>
-      </div>
+        <button type="submit" className={styles.submitBtn}>
+          {t('calcModal.form.submit')}
+        </button>
+      </form>
     </div>
   );
 };

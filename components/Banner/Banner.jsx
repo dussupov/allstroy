@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 import styles from './Banner.module.scss';
 import Image from 'next/image';
 import Link from "next/link";
+import {useTranslation} from "react-i18next";
 
 export default function Banner() {
+  const { t } = useTranslation();
+
+
   return (
     <section className={styles.hero}>
       <Image
@@ -23,11 +27,11 @@ export default function Banner() {
         transition={{ duration: 1.1, ease: 'easeOut' }}
       >
         <h1>
-          Мы строим доверие <br /> — не просто стены
+          {t('banner.title_1')} <br /> — {t('banner.title_2')}
         </h1>
         <button className={styles.ctaButton}>
           <Link href={'#cta'}>
-            Получить консультацию
+            {t('banner.btn')}
           </Link>
         </button>
       </motion.div>

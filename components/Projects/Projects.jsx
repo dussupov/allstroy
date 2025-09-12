@@ -11,15 +11,22 @@ import styles from './Projects.module.scss';
 import projectImg from '@/public/img/project-placeholder.jpg';
 import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 
 const Projects = () => {
+  const mapLngToStrapiLocale = (lng) => (
+    { ru: 'ru-RU', en: 'en', kz: 'kz' }[lng] || 'ru-RU'
+  );
 
   const dispatch = useDispatch();
   const [projects, setProjects] = useState(null)
+  const { t, i18n } = useTranslation();
 
   const getData = async () => {
     try{
-      const response = await fetch(`${API_URL}/api/projects?locale=ru-RU&populate=*`, {
+      const locale = mapLngToStrapiLocale(i18n.language);
+
+      const response = await fetch(`${API_URL}/api/projects?locale=${encodeURIComponent(locale)}&populate=*`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
@@ -47,10 +54,10 @@ const Projects = () => {
     <div className="container">
       <div className={styles.projects} id={'projects'}>
         <div className={styles.projectsTitle}>
-          <span>Готовые проекты</span>
+          <span>{t('projects.title')}</span>
         </div>
         <div className={styles.projectsSubtitle}>
-          <span>Фотографии которые говорят сами за себя</span>
+          <span>{t('projects.subtitle')}</span>
         </div>
 
         <Swiper
@@ -82,7 +89,7 @@ const Projects = () => {
                     <span>{project.packageType}</span>
                   </div>
                   <div className={styles.projectItemSquare}>
-                    <span>{project.square} м²</span>
+                    <span>{project.square} {t('projects.sqUnit')}</span>
                   </div>
                   <div className={styles.projectItemTerm}>
                     <span>{project.term}</span>
